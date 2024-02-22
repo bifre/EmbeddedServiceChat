@@ -139,49 +139,24 @@ disponibile, affida bile per avvicinarlo all'utente.
 <head>
 	
 </head>
-<script type='text/javascript' src='https://aceaidrico--migration.sandbox.my.site.com/ESWEnhancedChatBot1706709397585/assets/js/bootstrap.min.js'></script>
-
 <script type='text/javascript'>
-    // Definisci la funzione per inizializzare Embedded Messaging
-    function initEmbeddedMessaging(glsbBaseUrl) {
-        try {
-			console.log("Base URL ", glsbBaseUrl);
-            //Lingua del bot in modo dinamico.
-            const params = new URLSearchParams(window.location.search);
-            let varLang = params.has('language') ? params.get('language') : 'en_US';
-            embeddedservice_bootstrap.settings.language = varLang; // For example, enter 'en' or 'en-US'
-            //embeddedservice_bootstrap.settings.devMode = true;
-            window.addEventListener("onEmbeddedMessagingReady", () => {
-                embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({ 'APISITOWEB': 'GORI' });
-            });
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
 
-            embeddedservice_bootstrap.init(
-                '00D1l0000000z3P',
-                'Enhanced_ChatBot',
-                'https://aceaidrico--migration.sandbox.my.salesforce.com',
-				'https://aceaidrico--migration.sandbox.my.site.com/',
-				glsbBaseUrl,
+			embeddedservice_bootstrap.init(
+				'00D1l0000000z3P',
+				'Enhanced_ChatBot',
 				'https://aceaidrico--migration.sandbox.my.site.com/ESWEnhancedChatBot1706709397585',
-                {
-                    scrt2URL: 'https://aceaidrico--migration.sandbox.my.salesforce-scrt.com'
-                }
-            );
-        } catch (err) {
-            console.error('Error loading Embedded Messaging: ', err);
-        }
-    };
-
-	if(!window.embeddedservice_bootstrap){
-		var s = document.createElement('script');
-        s.setAttribute('src', 'https://aceaidrico--migration.sandbox.my.site.com/ESWEnhancedChatBot1706709397585/assets/js/bootstrap.min.js');
-        s.onload = function(){
-			initEmbeddedMessaging(null);
-		};
-        document.body.appendChild(s);
-	}else{
-		initEmbeddedMessaging('https://service.force.com');
-	}
+				{
+					scrt2URL: 'https://aceaidrico--migration.sandbox.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
 </script>
- 
+<script type='text/javascript' src='https://aceaidrico--migration.sandbox.my.site.com/ESWEnhancedChatBot1706709397585/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 	</body>
 </html>
