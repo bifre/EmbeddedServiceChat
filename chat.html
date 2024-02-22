@@ -136,33 +136,50 @@ disponibile, affida bile per avvicinarlo all'utente.
     -webkit-font-smoothing: antialiased;
 	}
 </style>
-	<script type='text/javascript' src='https://aceaidrico--migration.sandbox.my.site.com/ESWEnhancedChatBot1706709397585/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-	<script type='text/javascript'>
-		function initEmbeddedMessaging() {
-			try {
-				//Lingua del bot in modo dinamico.
-				const params = new URLSearchParams(window.location.search);
-				let varLang = params.has( 'language' ) ? params.get( 'language' ) : 'en_US';
-				embeddedservice_bootstrap.settings.language = varLang; // For example, enter 'en' or 'en-US'
-				//embeddedservice_bootstrap.settings.devMode = true;
-				window.addEventListener("onEmbeddedMessagingReady", () => {
-						embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({'APISITOWEB' : 'GORI'});
-					}
-				);
-	 
-				embeddedservice_bootstrap.init(
-					'00D1l0000000z3P',
-					'Enhanced_ChatBot',
-					'https://aceaidrico--migration.sandbox.my.site.com/ESWEnhancedChatBot1706709397585',
-					{
-						scrt2URL: 'https://aceaidrico--migration.sandbox.my.salesforce-scrt.com'
-					}
-				);
-			} catch (err) {
-				console.error('Error loading Embedded Messaging: ', err);
-			}
-		};
-	</script>
+<script type='text/javascript'>
+    // Definisci la funzione per inizializzare Embedded Messaging
+    function initEmbeddedMessaging() {
+        try {
+            //Lingua del bot in modo dinamico.
+            const params = new URLSearchParams(window.location.search);
+            let varLang = params.has('language') ? params.get('language') : 'en_US';
+            embeddedservice_bootstrap.settings.language = varLang; // For example, enter 'en' or 'en-US'
+            //embeddedservice_bootstrap.settings.devMode = true;
+            window.addEventListener("onEmbeddedMessagingReady", () => {
+                embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({ 'APISITOWEB': 'GORI' });
+            });
+
+            embeddedservice_bootstrap.init(
+                '00D1l0000000z3P',
+                'Enhanced_ChatBot',
+                'https://aceaidrico--migration.sandbox.my.site.com/ESWEnhancedChatBot1706709397585',
+                {
+                    scrt2URL: 'https://aceaidrico--migration.sandbox.my.salesforce-scrt.com'
+                }
+            );
+        } catch (err) {
+            console.error('Error loading Embedded Messaging: ', err);
+        }
+    };
+
+    // Carica lo script di Salesforce Embedded Service dinamicamente
+    function loadEmbeddedServiceScript(callback) {
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://service.force.com/embeddedservice/5.0/esw.min.js');
+        s.onload = callback;
+        document.body.appendChild(s);
+    }
+
+    // Callback da eseguire dopo il caricamento dello script di Salesforce Embedded Service
+    function onSalesforceScriptLoaded() {
+        // Inizializza Embedded Messaging
+        initEmbeddedMessaging();
+    }
+
+    // Carica lo script di Salesforce Embedded Service e inizializza Embedded Messaging
+    loadEmbeddedServiceScript(onSalesforceScriptLoaded);
+</script>
+
 	
  
 		<!--<script src="https://www.fiora.it/vendor/sb-admin.min.js"></script>-->
