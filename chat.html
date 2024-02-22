@@ -1,28 +1,32 @@
-<script type='text/javascript'>
-    function initEmbeddedMessaging() {
-        try {
-            //Lingua del bot in modo dinamico.
-            const params = new URLSearchParams(window.location.search);
-            let varLang = params.has( 'language' ) ? params.get( 'language' ) : 'en_US';
-            embeddedservice_bootstrap.settings.language = varLang; // For example, enter 'en' or 'en-US'
-            //embeddedservice_bootstrap.settings.devMode = true;
-            window.addEventListener("onEmbeddedMessagingReady", () => {
-                    embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({'APISITOWEB' : 'GORI'});
-                }
-            );
+<head>
+    <script type='text/javascript'>
+        function initEmbeddedMessaging() {
+            try {
+                //Lingua del bot in modo dinamico.
+                const params = new URLSearchParams(window.location.search);
+                let varLang = params.has('language') ? params.get('language') : 'en_US';
+                embeddedservice_bootstrap.settings.language = varLang; // For example, enter 'en' or 'en-US'
+                //embeddedservice_bootstrap.settings.devMode = true;
+                window.addEventListener("onEmbeddedMessagingReady", () => {
+                    embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({ 'APISITOWEB': 'GORI' });
+                });
     
-            embeddedservice_bootstrap.init(
-                '00D1l0000000z3P',
-                'Enhanced_ChatBot',
-                'https://aceaidrico--migration.sandbox.my.site.com/ESWEnhancedChatBot1706709397585',
-                {
-                    scrt2URL: 'https://aceaidrico--migration.sandbox.my.salesforce-scrt.com'
-                }
-            );
-        } catch (err) {
-            console.error('Error loading Embedded Messaging: ', err);
-        }
-    };
-</script>
-<script type='text/javascript' src='https://aceaidrico--migration.sandbox.my.site.com/ESWEnhancedChatBot1706709397585/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-
+                embeddedservice_bootstrap.init(
+                    '00D1l0000000z3P',
+                    'Enhanced_ChatBot',
+                    'https://aceaidrico--migration.sandbox.my.site.com/ESWEnhancedChatBot1706709397585',
+                    {
+                        scrt2URL: 'https://aceaidrico--migration.sandbox.my.salesforce-scrt.com'
+                    }
+                );
+            } catch (err) {
+                console.error('Error loading Embedded Messaging: ', err);
+            }
+        };
+    </script>
+</head>
+<body>
+    <!-- Il resto del tuo codice HTML -->
+    <script src="https://aceaidrico--migration.sandbox.my.site.com/ESWEnhancedChatBot1706709397585/assets/js/bootstrap.min.js" onload="initEmbeddedMessaging()"></script>
+    <!-- Altri script, se presenti -->
+</body>
