@@ -138,7 +138,7 @@ disponibile, affida bile per avvicinarlo all'utente.
 </style>
 <script type='text/javascript'>
     // Definisci la funzione per inizializzare Embedded Messaging
-    function initEmbeddedMessaging() {
+    function initEmbeddedMessaging(glsbBaseUrl) {
         try {
             //Lingua del bot in modo dinamico.
             const params = new URLSearchParams(window.location.search);
@@ -153,6 +153,7 @@ disponibile, affida bile per avvicinarlo all'utente.
                 '00D1l0000000z3P',
                 'Enhanced_ChatBot',
                 'https://aceaidrico--migration.sandbox.my.site.com/ESWEnhancedChatBot1706709397585',
+				glsbBaseUrl,
                 {
                     scrt2URL: 'https://aceaidrico--migration.sandbox.my.salesforce-scrt.com'
                 }
@@ -162,22 +163,16 @@ disponibile, affida bile per avvicinarlo all'utente.
         }
     };
 
-    // Carica lo script di Salesforce Embedded Service dinamicamente
-    function loadEmbeddedServiceScript(callback) {
-        var s = document.createElement('script');
-        s.setAttribute('src', 'https://service.force.com/embeddedservice/5.0/esw.min.js');
-        s.onload = callback;
+	if(!window.embeddedservice_bootstrap){
+		var s = document.createElement('script');
+        s.setAttribute('src', 'https://aceaidrico--migration.sandbox.my.site.com/ESWEnhancedChatBot1706709397585/assets/js/bootstrap.min.js');
+        s.onload = function(){
+			initEmbeddedMessaging(null);
+		};
         document.body.appendChild(s);
-    }
-
-    // Callback da eseguire dopo il caricamento dello script di Salesforce Embedded Service
-    function onSalesforceScriptLoaded() {
-        // Inizializza Embedded Messaging
-        initEmbeddedMessaging();
-    }
-
-    // Carica lo script di Salesforce Embedded Service e inizializza Embedded Messaging
-    loadEmbeddedServiceScript(onSalesforceScriptLoaded);
+	}else{
+		initEmbeddedMessaging('https://service.force.com');
+	}
 </script>
 
 	
