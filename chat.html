@@ -136,10 +136,16 @@ disponibile, affida bile per avvicinarlo all'utente.
     -webkit-font-smoothing: antialiased;
 	}
 </style>
+<head>
+	
+</head>
+<script type='text/javascript' src='https://aceaidrico--migration.sandbox.my.site.com/ESWEnhancedChatBot1706709397585/assets/js/bootstrap.min.js'></script>
+
 <script type='text/javascript'>
     // Definisci la funzione per inizializzare Embedded Messaging
     function initEmbeddedMessaging(glsbBaseUrl) {
         try {
+			console.log("Base URL ", glsbBaseUrl);
             //Lingua del bot in modo dinamico.
             const params = new URLSearchParams(window.location.search);
             let varLang = params.has('language') ? params.get('language') : 'en_US';
@@ -153,8 +159,9 @@ disponibile, affida bile per avvicinarlo all'utente.
                 '00D1l0000000z3P',
                 'Enhanced_ChatBot',
                 'https://aceaidrico--migration.sandbox.my.salesforce.com',
-		'https://aceaidrico--migration.sandbox.my.site.com/',
-		glsbBaseUrl,
+				'https://aceaidrico--migration.sandbox.my.site.com/',
+				glsbBaseUrl,
+				'https://aceaidrico--migration.sandbox.my.site.com/ESWEnhancedChatBot1706709397585',
                 {
                     scrt2URL: 'https://aceaidrico--migration.sandbox.my.salesforce-scrt.com'
                 }
@@ -175,12 +182,6 @@ disponibile, affida bile per avvicinarlo all'utente.
 		initEmbeddedMessaging('https://service.force.com');
 	}
 </script>
-
-	
- 
-		<!--<script src="https://www.fiora.it/vendor/sb-admin.min.js"></script>-->
- 
-	
  
 	</body>
 </html>
