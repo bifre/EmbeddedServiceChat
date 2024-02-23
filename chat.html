@@ -8,7 +8,14 @@
 <meta name="theme-color" content="#005ca9">
 <meta name="msapplication-navbutton-color" content="#005ca9">
 <meta name="apple-mobile-web-app-status-bar-style" content="#005ca9">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-src 'self' https://*.salesforce.com https://aceaidrico--svimvp3.sandbox.my.site.com https://aceaidrico--svimvp3--c.sandbox.vf.force.com https://aceaidrico--migration--c.sandbox.vf.force.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' https://rlxservices.netsons.org; script-src 'self' https://htmlpreview.github.io 'unsafe-inline';">
+<meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' https://cdnjs.cloudflare.com https://aceaidrico--migration.sandbox.my.site.com 'unsafe-inline';
+    style-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline';
+    img-src 'self' https://rlxservices.netsons.org;
+    frame-src 'self' https://*.salesforce.com https://aceaidrico--svimvp3.sandbox.my.site.com https://aceaidrico--svimvp3--c.sandbox.vf.force.com https://aceaidrico--migration--c.sandbox.vf.force.com;
+">
+
 <title>Chatbot Collaudo</title>
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
