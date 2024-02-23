@@ -41,7 +41,7 @@
 L’obiettivo è quello di ridurre le richieste di supporto veicolate su
 altri canali , con lo scopo di incanalare nella chat le domande
 semplici e da alleggerire gli altri punti di contatto con il servizio
-clientiXXXX.
+clientiSSS.
  
 		  </p>
 <br>
@@ -146,6 +146,7 @@ disponibile, affida bile per avvicinarlo all'utente.
 	}
 </style>
 
+<script type='text/javascript' src='https://aceaidrico--svimvp3.sandbox.my.site.com/ESWEnhancedChatBot1706709397585/assets/js/bootstrap.min.js'></script>
 <script type='text/javascript'>
     // Definisci la funzione per inizializzare Embedded Messaging
    
@@ -161,12 +162,21 @@ disponibile, affida bile per avvicinarlo all'utente.
 					scrt2URL: 'https://aceaidrico--svimvp3.sandbox.my.salesforce-scrt.com'
 				}
 			);
+            console.log(embeddedservice_bootstrap);
 		} catch (err) {
 			console.error('Error loading Embedded Messaging: ', err);
 		}
 	};
+
+    if(!window.embeddedservice_bootstrap){
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://aceaidrico--svimvp3.sandbox.my.site.com/ESWEnhancedChatBot1706709397585/assets/js/bootstrap.min.js');
+        s.onload = function(){
+            initEmbeddedMessaging(null);
+        };
+        document.body.appendChild(s);
+    }
 </script>
-<script type='text/javascript' src='https://aceaidrico--svimvp3.sandbox.my.site.com/ESWEnhancedChatBot1706709397585/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
 
  
