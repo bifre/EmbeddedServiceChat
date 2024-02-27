@@ -1,16 +1,21 @@
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"></meta>
-    </head>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"></meta>
+</head>
+<body id="body_home" align="center">
+
+asdasdasd
+
+<script type='text/javascript' src='https://aceaidrico--migration.sandbox.my.site.com/ESWEnhancedChatBot1706709397585/assets/js/bootstrap.min.js'></script>
 <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
-            //Lingua del bot in modo dinamico.
             const params = new URLSearchParams(window.location.search);
             let varLang = params.has( 'language' ) ? params.get( 'language' ) : 'en_US';
             
 			embeddedservice_bootstrap.settings.language = varLang; // For example, enter 'en' or 'en-US'
             
-            //embeddedservice_bootstrap.settings.devMode = true;
             window.addEventListener("onEmbeddedMessagingReady", () => {
 			
                     embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({'APISITOWEB' : 'GORI'});
@@ -25,11 +30,20 @@
 					scrt2URL: 'https://aceaidrico--migration.sandbox.my.salesforce-scrt.com'
 				}
 			);
-    	//ELIMINA COMMENTO PRIMA DI ANDARE IN PROD.
-        console.log('Parametri Chat: ', embeddedservice_bootstrap.settings);
+            console.log(embeddedservice_bootstrap);
 		} catch (err) {
 			console.error('Error loading Embedded Messaging: ', err);
 		}
 	};
+    if(!window.embeddedservice_bootstrap){
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://aceaidrico--migration.sandbox.my.site.com/ESWEnhancedChatBot1706709397585/assets/js/bootstrap.min.js');
+        s.onload = function(){
+            initEmbeddedMessaging(null);
+        };
+        document.body.appendChild(s);
+    }
 </script>
-<script type='text/javascript' src='https://aceaidrico--migration.sandbox.my.site.com/ESWEnhancedChatBot1706709397585/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+ 
+	</body>
+</html>
