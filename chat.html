@@ -14,7 +14,7 @@ ChatBot TEST
             const params = new URLSearchParams(window.location.search);
             let varLang = params.has( 'language' ) ? params.get( 'language' ) : 'en_US';
             
-			embeddedservice_bootstrap.settings.language = varLang; // For example, enter 'en' or 'en-US'
+			embeddedservice_bootstrap.settings.language = 'it'; // For example, enter 'en' or 'en-US'
             
             window.addEventListener("onEmbeddedMessagingReady", () => {
 			
