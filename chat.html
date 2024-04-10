@@ -7,7 +7,34 @@
 
 ChatBot TEST
 
-<script type='text/javascript' src='https://aceaidrico--svimvp3.sandbox.my.site.com/ESWEnhancedChatBot1706709397585/assets/js/bootstrap.min.js'></script>
+
+<script type='text/javascript'>
+	  function initEmbeddedMessaging() {
+	    try {
+	      embeddedservice_bootstrap.settings.language = 'it';
+	
+	      window.addEventListener("onEmbeddedMessagingReady", () => {
+	
+	                    embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({'APISITOWEB' : 'AAT2'});
+	                }
+	            );
+	
+	      embeddedservice_bootstrap.init(
+	        '00D1l0000000z3P',
+	        'Enhanced_ChatBot',
+	        'https://aceaidrico--migration.sandbox.my.site.com/ESWEnhancedChatBot1706709397585',
+	        {
+	          scrt2URL: 'https://aceaidrico--migration.sandbox.my.salesforce-scrt.com'
+	        }
+	      );
+	    } catch (err) {
+	      console.error('Error loading Embedded Messaging: ', err);
+	    }
+	  };
+	</script>
+	<script type='text/javascript' src='https://aceaidrico--migration.sandbox.my.site.com/ESWEnhancedChatBot1706709397585/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
+<!--<script type='text/javascript' src='https://aceaidrico--svimvp3.sandbox.my.site.com/ESWEnhancedChatBot1706709397585/assets/js/bootstrap.min.js'></script>
 <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
@@ -39,7 +66,7 @@ ChatBot TEST
         };
         document.body.appendChild(s);
     }
-</script>
- 
+</script>-->
+
 	</body>
 </html>
