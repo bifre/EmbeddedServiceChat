@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"></meta>
+</head>
+<body id="body_home" align="center">
+ChatBot PRE TEST
+<script type='text/javascript' src='https://aceaidrico--preprod.sandbox.my.site.com/ESWEnhancedChatBot1706709397585/assets/js/bootstrap.min.js'></script>
+<script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'it'; // For example, enter 'en' or 'en-US'
+
+			window.addEventListener("onEmbeddedMessagingReady", () => {
+					embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({'APISITOWEB' : 'AAT2'});
+				}
+			);
+
+			embeddedservice_bootstrap.init(
+				'00D5E000000BX73',
+				'Enhanced_ChatBot',
+				'https://aceaidrico--preprod.sandbox.my.site.com/ESWEnhancedChatBot1706709397585',
+				{
+					scrt2URL: 'https://aceaidrico--preprod.sandbox.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+	if(!window.embeddedservice_bootstrap){
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://aceaidrico--preprod.sandbox.my.site.com/ESWEnhancedChatBot1706709397585/assets/js/bootstrap.min.js');
+        s.onload = function(){
+            initEmbeddedMessaging(null);
+        };
+        document.body.appendChild(s);
+    }
+</script>
+ 
+	</body>
+</html>
