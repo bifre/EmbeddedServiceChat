@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"></meta>
 </head>
 <body id="body_home" align="center">
-ChatBot TEST Callback 
+ChatBot TEST Callback asd
 <script type='text/javascript' src='https://aceaidrico--svimvp3.sandbox.my.site.com/ESWEnhancedChatBot1706709397585/assets/js/bootstrap.min.js'></script>
 <script type='text/javascript'>
     function initEmbeddedMessaging() {
@@ -31,7 +31,8 @@ ChatBot TEST Callback
 
     function onLoadIframe() {
         var iframe = document.getElementById('embeddedMessagingSiteContextFrame'); // Assicurati di sostituire 'iframe_id' con l'id effettivo del tuo iframe
-        iframe.setAttribute('allow-scripts', '');
+        console.log("iframe2 " + iframe);
+	    iframe.setAttribute('allow-scripts', '');
         iframe.setAttribute('allow-same-origin', '');
         iframe.setAttribute('allow-forms', '');
     }
@@ -48,6 +49,7 @@ ChatBot TEST Callback
     // Aggiungi event listener per gestire il caricamento dell'iframe
     window.addEventListener('load', function() {
         var iframe = document.getElementById('embeddedMessagingSiteContextFrame');
+	    console.log("iframe " + iframe);
         iframe.addEventListener('load', onLoadIframe);
     });
 </script>
