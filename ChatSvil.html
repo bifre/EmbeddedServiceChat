@@ -30,7 +30,7 @@ ChatBot TEST Callback asd
     };
 
     function onLoadIframe() {
-        var iframe = document.getElementById('embeddedMessagingSiteContextFrame'); // Assicurati di sostituire 'iframe_id' con l'id effettivo del tuo iframe
+        var iframe = document.querySelector('.embeddedMessagingSiteContextFrame');
         console.log("iframe2 " + iframe);
 	    iframe.setAttribute('allow-scripts', '');
         iframe.setAttribute('allow-same-origin', '');
@@ -48,7 +48,7 @@ ChatBot TEST Callback asd
 
     // Aggiungi event listener per gestire il caricamento dell'iframe
     window.addEventListener('load', function() {
-        var iframe = document.getElementById('embeddedMessagingSiteContextFrame');
+        var iframe = document.querySelector('.embeddedMessagingSiteContextFrame'); 
 	    console.log("iframe " + iframe);
         iframe.addEventListener('load', onLoadIframe);
     });
