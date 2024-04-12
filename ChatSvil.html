@@ -29,6 +29,10 @@ ChatBot TEST Callback asd
         }
     };
 
+window.addEventListener('message', function(event) {
+    console.log("Event ", JSON.stringify(event));
+});
+
     function onLoadIframe() {
         var iframe = document.querySelector('.embeddedMessagingSiteContextFrame');
         console.log("iframe2 " + iframe);
