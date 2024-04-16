@@ -13,12 +13,6 @@
         try {
             embeddedservice_bootstrap.settings.language = 'it'; // For example, enter 'en' or 'en-US'
 	    embeddedservice_bootstrap.settings.devMode = true;
-	    var obj = {
-                sectionName: "EmbeddedMessagingChatHeader",
-                labelName: "HeaderGreetingAnnouncement",
-                labelValue: "Buongiorno, chiedimi qualsiasi cosa."
-	    };
-		embeddedservice_bootstrap.settings.embeddedServiceConfig.customLabels.push(obj);
             window.addEventListener("onEmbeddedMessagingReady", () => {
                     embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({'APISITOWEB' : 'AAT2'});
                 }
